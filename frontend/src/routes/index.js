@@ -6,7 +6,7 @@ import Login from "../component/Login";
 import Home from "../component/Home";
 import Messagepage from "../component/Messagepage";
 import Authlayout from "../layout/Authlayout";
-import Forgot from "../component/Forgot";
+// import Forgot from "../component/Forgot";
 import ProtectedRoute from "./ProtectedRoute";
 
 
@@ -22,10 +22,6 @@ const router = createBrowserRouter([
             {
                 path:"login",
                 element: <Authlayout><Login/></Authlayout>
-            },
-            {
-                path:"forgot",
-                element: <Authlayout><Forgot/></Authlayout>
             },
             {
                 path: "/",

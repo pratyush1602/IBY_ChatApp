@@ -92,7 +92,7 @@ const Login = () => {
         </form>
 
         <p className='mt-2 p-2 text-center'>Don't have an account? <Link className='hover:text-blue-500' to={'/register'}>Register</Link></p>
-        <p className=' text-center'> <Link className='hover:text-blue-500' to={'/forgot'}>Forgot Password?</Link></p>
+        {/* <p className=' text-center'> <Link className='hover:text-blue-500' ></Link></p> */}
       </div>
     </div>
   );

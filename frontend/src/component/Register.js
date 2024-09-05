@@ -61,11 +61,11 @@ const Register = () => {
                     body: JSON.stringify({ name, email, password }),
                 });
                 const json = await response.json();
-                console.log(json);
+                // console.log(json);
                 if (json.success) {
                  
                     toast.success("Registration successful!");
-                    console.log("Success:", json);
+                    // console.log("Success:", json);
                     setTimeout(() => {
                         navigate('/login');
                       }, 500);

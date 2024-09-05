@@ -20,7 +20,7 @@ const Search = ({onclose}) => {
                 search:search
             })
             setloading(false)
-            console.log("user searched",response.data.data);
+            // console.log("user searched",response.data.data);
             setusersearched(response.data.data)
         } catch (error) {
             toast.error(error?.response?.data?.message);
@@ -31,7 +31,7 @@ const Search = ({onclose}) => {
     useEffect(()=>{
         handleserach();
     },[search])
-    console.log("serach user",usersearched)
+    // console.log("serach user",usersearched)
   
     return (
         <div className='fixed bottom-0 top-0 left-0 right-0 bg-slate-800 bg-opacity-60 p-2 z-10'>

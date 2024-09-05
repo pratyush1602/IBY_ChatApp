@@ -25,7 +25,7 @@ const onlineuser = new Set();
 
 io.on('connection', async (socket) => {
 
-    console.log("connected user ", socket.id);
+    // console.log("connected user ", socket.id);
 
     const token = socket.handshake.auth.token
     const user = await details(token);
@@ -36,7 +36,7 @@ io.on('connection', async (socket) => {
     io.emit('onlineuser', Array.from(onlineuser))
 
     socket.on('message page', async (userId) => {
-        console.log('userId', userId);
+        // console.log('userId', userId);
         const userDetails = await USER.findById(userId).select('-password');
         const payload = {
             _id: userDetails?._id,
@@ -97,14 +97,7 @@ io.on('connection', async (socket) => {
                 { sender: data?.receiver, receiver: data?.sender }
             ]
         }).populate('messages').sort({ updatedAt: -1 })
-        // console.log("getconversationmessage",getconversationmessage);
-
-        // if (data?.receiver === user?._id) {
-        //     await MESS.updateMany(
-        //         { _id: { "$in": getconversationmessage?.messages.map(msg => msg._id) }, msgbyuserid: data?.sender, seen: false },
-        //         { "$set": { seen: true } }
-        //     );
-        // }
+      
 
         io.to(data?.sender).emit('message', getconversationmessage?.messages || []);
         io.to(data?.receiver).emit('message', getconversationmessage?.messages || []);
@@ -117,7 +110,7 @@ io.on('connection', async (socket) => {
 
     socket.on('sidebar', async (currentuserid) => {
         if (!mongoose.Types.ObjectId.isValid(currentuserid)) {
-            console.error('Invalid ObjectId:', currentuserid);
+            // console.error('Invalid ObjectId:', currentuserid);
             return;
         }
 
