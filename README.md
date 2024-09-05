@@ -1,6 +1,6 @@
-Name : Pratyush Kaurav
-University : IIT Dharwad
-Department : Maths And Computing
+Name : Pratyush Kaurav ,
+University : IIT Dharwad , 
+Department : Maths And Computing ,
 
 1.	git clone https://github.com/pratyush1602/IBY_ChatApp
 2.	If Node.js is not installed on your device, you can download and install it from the official website: Node.js Download.
